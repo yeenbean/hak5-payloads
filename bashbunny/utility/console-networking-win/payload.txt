@@ -1,0 +1,24 @@
+#!/bin/bash
+# Title:        Networking Console (Windows)
+# Description:  Allows you to access the Bash Bunny console with access to the
+#               host machine's network. You will need to enable network sharing
+#               on your local network adapter to share to the BB's network
+#               adapter. Additionally, you will need to set a static IP on the
+#               BB adapter to 172.16.64.64/24 and leave the router and DNS
+#               fields blank.
+#               Additionally, the CPU governor is adjusted to use only one CPU
+#               core (CUCUMBER ENABLE). This reduces heat and extended use won't
+#               put wear on your BB.
+# Author:       x6a70
+# Target:       Microsoft Windows
+# Dependencies: none
+#
+#   | LED States        |                       |
+#   |===================|=======================|
+#   | Purple            | Setting up interfaces |
+#   | Flashing white    | Networking ready      |
+
+LED SETUP
+CUCUMBER ENABLE
+ATTACKMODE SERIAL RNDIS_ETHERNET
+LED W SINGLE
