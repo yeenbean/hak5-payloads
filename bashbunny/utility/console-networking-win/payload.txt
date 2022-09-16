@@ -24,7 +24,14 @@
 #   | Purple         | Setting up interfaces |
 #   | Flashing white | Networking ready      |
 
+# Setup stage
+# Configures the bunny to use a single core, then configures the bunny with
+# serial and networking exposed to the host.
 LED SETUP
 CUCUMBER ENABLE
 ATTACKMODE SERIAL RNDIS_ETHERNET
+
+# Ready stage
+# When the LED starts blinking white, the bunny is ready to go. Before you
+# unplug the bunny, it's recommended to do a safe shutdown.
 LED W SINGLE
