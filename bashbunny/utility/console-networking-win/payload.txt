@@ -21,7 +21,7 @@
 #
 #   | LED States     |                       |
 #   | -------------- | --------------------- |
-#   | Purple         | Setting up interfaces |
+#   | Solid magenta  | Setting up interfaces |
 #   | Flashing white | Networking ready      |
 
 # Setup stage
