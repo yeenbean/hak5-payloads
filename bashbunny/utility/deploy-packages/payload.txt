@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# Title:        MSI Package Deployment
+# Description:  Installs packages in MSI and EXE format. Place your packages in
+#               the Packages directory, and the script will automatically
+#               execute each one on run.
+# Author:       yeenbean
+# Contributors:
+# Target:       Microsoft Windows with PowerShell 3 or later
+# Dependencies: None
+
+# Initialization stage
+# Sets CPU governor to use one core and defines attack mode.
+LED SETUP
+CUCUMBER ENABLE
+ATTACKMODE HID STORAGE
+QUACK DELAY 3000
+
+# Attack stage
+# Runs the PowerShell script from the run dialog.
+LED ATTACK
+QUACK DELAY 1000
+RUN WIN powershell -NoP -ExecutionPolicy Bypass ".((gwmi win32_volume -f 'label=''BashBunny''').Name+'payloads\\$SWITCH_POSITION\Run-All.ps1')"
+
+# Wait stage
+# While the package is installing, the bunny waits for completion. The bunny
+# will resume once the mass storage is ejected.
+LED SPECIAL
+WAITEJECT
+
+# Cleanup stage
+# During this stage, the bunny will safely turn itself off.
+LED CLEANUP
+poweroff
